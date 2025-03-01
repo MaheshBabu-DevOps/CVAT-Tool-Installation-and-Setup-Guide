@@ -1,5 +1,5 @@
 // Copyright (C) 2020-2022 Intel Corporation
-// Copyright (C) 2022-2024 CVAT.ai Corporation
+// Copyright (C) CVAT.ai Corporation
 //
 // SPDX-License-Identifier: MIT
 
@@ -206,7 +206,7 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
             frameNumber + 1,
             jobInstance.stopFrame,
         );
-        if (frame !== null && isAbleToChangeFrame()) {
+        if (frame !== null && isAbleToChangeFrame(frame)) {
             changeFrame(frame);
         }
     };

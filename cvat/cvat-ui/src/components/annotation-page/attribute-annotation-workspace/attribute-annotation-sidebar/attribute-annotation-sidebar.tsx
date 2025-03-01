@@ -1,5 +1,5 @@
 // Copyright (C) 2020-2022 Intel Corporation
-// Copyright (C) 2022-2024 CVAT.ai Corporation
+// Copyright (C) CVAT.ai Corporation
 //
 // SPDX-License-Identifier: MIT
 
@@ -316,7 +316,7 @@ function AttributeAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.
             if (activeObjectState && activeObjectState.objectType === ObjectType.TRACK) {
                 const frame =
                     typeof activeObjectState.keyframes.next === 'number' ? activeObjectState.keyframes.next : null;
-                if (frame !== null && isAbleToChangeFrame()) {
+                if (frame !== null && isAbleToChangeFrame(frame)) {
                     changeFrame(frame);
                 }
             }
@@ -326,7 +326,7 @@ function AttributeAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.
             if (activeObjectState && activeObjectState.objectType === ObjectType.TRACK) {
                 const frame =
                     typeof activeObjectState.keyframes.prev === 'number' ? activeObjectState.keyframes.prev : null;
-                if (frame !== null && isAbleToChangeFrame()) {
+                if (frame !== null && isAbleToChangeFrame(frame)) {
                     changeFrame(frame);
                 }
             }

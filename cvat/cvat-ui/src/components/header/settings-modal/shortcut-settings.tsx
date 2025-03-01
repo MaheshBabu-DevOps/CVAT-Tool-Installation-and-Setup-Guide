@@ -1,4 +1,4 @@
-// Copyright (C) 2024 CVAT.ai Corporation
+// Copyright (C) CVAT.ai Corporation
 //
 // SPDX-License-Identifier: MIT
 
@@ -74,7 +74,7 @@ function ShortcutsSettingsComponent(props: Props): JSX.Element {
         const scopeItems = Object.values(ShortcutScope).map((scope: string) => {
             const viewFilteredItems = filteredKeyMap.filter(
                 ([, item]) => item.scope === scope,
-            );
+            ).sort(([, item1], [, item2]) => (item1.displayWeight ?? 0) - (item2.displayWeight ?? 0));
             if (viewFilteredItems.length === 0) {
                 return null;
             }
